@@ -1,0 +1,14 @@
+RewriteEngine On
+
+# Define public/index.php como index principal
+DirectoryIndex public/index.php
+
+# Opcional: URLs amigáveis removendo index.php das rotas futuras
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^(.*)$ public/index.php/$1 [L]
+
+# Proteção básica de .htaccess e .htpasswd
+<FilesMatch "^\.ht">
+  Require all denied
+</FilesMatch>
